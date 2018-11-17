@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-interface IButton {}
+interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  disabled?: boolean;
+}
 
 const StyledButton = styled('button')({
   color: '#2a2a2a',
