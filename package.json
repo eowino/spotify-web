@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://spotify-web.netlify.com/",
+  "repository": {
+    "url": "https://github.com/eowino/spotify-web"
+  },
   "author": {
     "name": "Evans Owino",
     "url": "https://github.com/eowino"
