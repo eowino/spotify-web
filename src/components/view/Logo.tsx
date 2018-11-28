@@ -1,14 +1,7 @@
 import React from 'react';
-import { css } from 'emotion';
 
 export const LogoWithText = () => (
-  <svg
-    viewBox="0 0 1134 340"
-    className={css({
-      width: 130,
-      height: 40
-    })}
-  >
+  <svg viewBox="0 0 1134 340" width="130" height="40">
     <title>Spotify</title>
     <path
       fill="currentColor"
@@ -18,13 +11,7 @@ export const LogoWithText = () => (
 );
 
 export const Logo = () => (
-  <svg
-    viewBox="0 0 167.5 167.5"
-    className={css({
-      width: 32,
-      height: 32
-    })}
-  >
+  <svg viewBox="0 0 167.5 167.5" width="32" height="32">
     <title>Spotify</title>
     <path
       fill="currentColor"

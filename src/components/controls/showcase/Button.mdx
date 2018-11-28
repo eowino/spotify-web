@@ -15,13 +15,29 @@ import { Button } from '../Button';
 ## Basic usage
 
 <Playground>
-  <Button onClick={() => alert('Clicked')}>Click me</Button>
+  <Button>Click me</Button>
 </Playground>
 
 ## Rounded Button
 
 <Playground>
-  <Button className="extra-test-class" rounded onClick={() => alert('Clicked')}>
+  <Button className="extra-test-class" rounded>
+    Click me
+  </Button>
+</Playground>
+
+## Rounded White Button
+
+<Playground style={{ backgroundColor: '#282828' }}>
+  <Button className="extra-test-class" rounded white>
+    Click me
+  </Button>
+</Playground>
+
+## Rounded Black Button
+
+<Playground style={{ backgroundColor: '#282828' }}>
+  <Button className="extra-test-class" rounded black>
     Click me
   </Button>
 </Playground>
