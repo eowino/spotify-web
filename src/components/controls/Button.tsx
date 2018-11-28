@@ -8,6 +8,7 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   rounded?: boolean;
   white?: boolean;
   black?: boolean;
+  full?: boolean;
 }
 
 const roundedBtn = css({
@@ -56,13 +57,18 @@ const StyledButton = styled('button')({
   textAlign: 'center',
 });
 
+const fullBtn = css({
+  width: '100%',
+});
+
 export const Button = ({ className = '', ...props }: IButton) => (
   <StyledButton
     className={cssUtil(
       className,
       props.rounded ? roundedBtn : '',
       props.white ? whiteBtn : '',
-      props.black ? blackBtn : ''
+      props.black ? blackBtn : '',
+      props.full ? fullBtn : ''
     )}
     {...props}
   />
