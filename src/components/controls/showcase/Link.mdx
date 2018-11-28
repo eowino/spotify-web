@@ -5,6 +5,7 @@ menu: Components
 
 import { Playground, PropsTable } from 'docz';
 import { Link } from '../Link';
+import { Search } from '../../view/Icons';
 
 # Link
 
@@ -31,5 +32,14 @@ import { Link } from '../Link';
 <Playground style={{ backgroundColor: '#564530' }}>
   <Link href="#" smallLink>
     Cookies
+  </Link>
+</Playground>
+
+## Link with Icon
+
+<Playground style={{ backgroundColor: '#0b0907' }}>
+  <Link href="#" subtleLink withIcon>
+    <Search />
+    <span>Search</span>
   </Link>
 </Playground>

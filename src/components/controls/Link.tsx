@@ -3,9 +3,12 @@ import styled, { css } from 'react-emotion';
 import { css as cssUtil } from '../../misc/';
 
 interface ILink extends React.ButtonHTMLAttributes<HTMLAnchorElement> {
+  href?: string;
   subtleLink?: boolean;
   smallLink?: boolean;
-  children: React.ReactChild;
+  whiteLink?: boolean;
+  withIcon?: boolean;
+  children: React.ReactChild | React.ReactChild[];
 }
 
 const StyledLink = styled('a')({
@@ -35,13 +38,29 @@ const smallLink = css({
   },
 });
 
+const whiteLink = css({
+  color: '#fff',
+});
+
+const withIcon = css({
+  display: 'flex',
+  alignItems: 'center',
+  fontWeight: 600,
+  textTransform: 'none',
+  '> svg': {
+    marginRight: 10,
+  },
+});
+
 export const Link = ({ className = '', ...props }: ILink) => (
   <StyledLink
     {...props}
     className={cssUtil(
       className,
       props.subtleLink ? subtleLink : '',
-      props.smallLink ? smallLink : ''
+      props.smallLink ? smallLink : '',
+      props.whiteLink ? whiteLink : '',
+      props.withIcon ? withIcon : ''
     )}
   />
 );
