@@ -8,6 +8,7 @@ interface ILink extends React.ButtonHTMLAttributes<HTMLAnchorElement> {
   smallLink?: boolean;
   whiteLink?: boolean;
   withIcon?: boolean;
+  active?: boolean;
   children: React.ReactChild | React.ReactChild[];
 }
 
@@ -42,6 +43,10 @@ const whiteLink = css({
   color: '#fff',
 });
 
+const active = css({
+  color: '#1db954',
+});
+
 const withIcon = css({
   display: 'flex',
   alignItems: 'center',
@@ -60,7 +65,8 @@ export const Link = ({ className = '', ...props }: ILink) => (
       props.subtleLink ? subtleLink : '',
       props.smallLink ? smallLink : '',
       props.whiteLink ? whiteLink : '',
-      props.withIcon ? withIcon : ''
+      props.withIcon ? withIcon : '',
+      props.active ? active : ''
     )}
   />
 );

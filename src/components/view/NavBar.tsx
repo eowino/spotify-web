@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'react-emotion';
 import { LogoWithText, Search, Home, Library } from '../view';
 import { Link, Button } from '../controls';
-import { mgb20 } from '../../styles';
+import { mgb20, center } from '../../styles';
 
 const StyledNavBar = styled('nav')({
   backgroundColor: '#0b0907',
@@ -28,6 +28,7 @@ const PrimaryNavArea = styled('div')({
 
 const SecondaryNavArea = styled('div')({
   marginBottom: 30,
+  fontSize: 14,
 });
 
 const Divider = styled('span')({
@@ -36,6 +37,7 @@ const Divider = styled('span')({
   height: 13,
   borderLeft: '1px solid #b3b3b3',
   margin: '3px 15px',
+  verticalAlign: 'middle',
 });
 
 export class NavBar extends React.PureComponent {
@@ -55,7 +57,7 @@ export class NavBar extends React.PureComponent {
             </Link>
           </StyledNavBarLink>
           <StyledNavBarLink>
-            <Link href="#home" subtleLink withIcon>
+            <Link href="#home" subtleLink withIcon active>
               <Home />
               <span>Home</span>
             </Link>
@@ -74,13 +76,13 @@ export class NavBar extends React.PureComponent {
           <Button black rounded full className={mgb20}>
             Log In
           </Button>
-          <div>
-            <Link href="#library" smallLink>
+          <div className={center}>
+            <Link href="#cookies" smallLink>
               Cookies
             </Link>
             <Divider />
-            <Link href="#library" smallLink>
-              Cookies
+            <Link href="#privacy" smallLink>
+              Privacy
             </Link>
           </div>
         </SecondaryNavArea>

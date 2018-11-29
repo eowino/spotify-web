@@ -35,10 +35,27 @@ import { Search } from '../../view/Icons';
   </Link>
 </Playground>
 
+## White Link
+
+<Playground style={{ backgroundColor: '#32404e' }}>
+  <Link href="#" whiteLink>
+    Discover
+  </Link>
+</Playground>
+
 ## Link with Icon
 
 <Playground style={{ backgroundColor: '#0b0907' }}>
   <Link href="#" subtleLink withIcon>
+    <Search />
+    <span>Search</span>
+  </Link>
+</Playground>
+
+## Active Link
+
+<Playground style={{ backgroundColor: '#0b0907' }}>
+  <Link href="#" withIcon active>
     <Search />
     <span>Search</span>
   </Link>

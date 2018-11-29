@@ -15,7 +15,7 @@ const roundedBtn = css({
   border: 'none',
   color: '#fff',
   backgroundColor: '#1db954',
-  padding: '7px 22px',
+  padding: '8px 22px',
   textTransform: 'uppercase',
   letterSpacing: '.16em',
   borderRadius: 500,
