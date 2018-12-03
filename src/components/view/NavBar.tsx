@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'react-emotion';
-import { LogoWithText, Search, Home, Library } from '../view';
+import { LogoWithText, Logo, Search, Home, Library } from '../view';
 import { Link, Button } from '../controls';
 import { mgb20, center } from '../../styles';
+import { hideInTablet, hideInDesktop, activeInTablet } from '../../styles';
 
 const StyledNavBar = styled('nav')({
   backgroundColor: '#0b0907',
@@ -13,13 +14,25 @@ const StyledNavBar = styled('nav')({
   height: '100vh',
   padding: '24px 24px 5px',
   width: '230px',
-  '@media screen and (max-width: 720px)': {
+  [activeInTablet]: {
     width: '80px',
+    padding: '24px 0 0',
+    flexDirection: 'unset',
   },
 });
 
 const StyledNavBarLink = styled('div')({
   margin: '10px 0 20px',
+  [activeInTablet]: {
+    a: {
+      paddingLeft: 8,
+      display: 'block',
+      textAlign: 'center',
+    },
+    'a.logo': {
+      paddingLeft: 0,
+    },
+  },
 });
 
 const PrimaryNavArea = styled('div')({
@@ -46,30 +59,35 @@ export class NavBar extends React.PureComponent {
       <StyledNavBar>
         <PrimaryNavArea>
           <StyledNavBarLink>
-            <Link href="#home" whiteLink>
-              <LogoWithText />
+            <Link href="#home" className="logo" whiteLink>
+              <span className={hideInTablet}>
+                <LogoWithText />
+              </span>
+              <span className={hideInDesktop}>
+                <Logo />
+              </span>
             </Link>
           </StyledNavBarLink>
           <StyledNavBarLink>
             <Link href="#search" subtleLink withIcon>
               <Search />
-              <span>Search</span>
+              <span className={hideInTablet}>Search</span>
             </Link>
           </StyledNavBarLink>
           <StyledNavBarLink>
             <Link href="#home" subtleLink withIcon active>
               <Home />
-              <span>Home</span>
+              <span className={hideInTablet}>Home</span>
             </Link>
           </StyledNavBarLink>
           <StyledNavBarLink>
             <Link href="#library" subtleLink withIcon>
               <Library />
-              <span>Your Library</span>
+              <span className={hideInTablet}>Your Library</span>
             </Link>
           </StyledNavBarLink>
         </PrimaryNavArea>
-        <SecondaryNavArea>
+        <SecondaryNavArea className={hideInTablet}>
           <Button white rounded full className={mgb20}>
             Sign Up
           </Button>

@@ -45,6 +45,9 @@ const whiteLink = css({
 
 const active = css({
   color: '#1db954',
+  '&:hover, &:focus': {
+    color: '#1db954',
+  },
 });
 
 const withIcon = css({
