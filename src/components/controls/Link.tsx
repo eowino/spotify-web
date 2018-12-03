@@ -5,6 +5,7 @@ import { spotifyGreen } from '../../styles';
 
 interface ILink extends React.ButtonHTMLAttributes<HTMLAnchorElement> {
   href?: string;
+  target?: string;
   subtleLink?: boolean;
   smallLink?: boolean;
   whiteLink?: boolean;

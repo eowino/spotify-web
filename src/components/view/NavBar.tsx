@@ -96,11 +96,17 @@ export class NavBar extends React.PureComponent {
             Log In
           </Button>
           <div className={center}>
-            <Link href="#cookies" smallLink>
+            <Link
+              href="https://www.spotify.com/uk/legal/cookies-policy/"
+              target="_blank"
+              smallLink>
               Cookies
             </Link>
             <Divider />
-            <Link href="#privacy" smallLink>
+            <Link
+              href="https://www.spotify.com/uk/legal/privacy-policy/"
+              target="_blank"
+              smallLink>
               Privacy
             </Link>
           </div>
