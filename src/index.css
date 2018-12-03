@@ -5,8 +5,48 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'spotify-circular', 'Helvetica Neue', Helvetica, Arial,
+    'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS Gothic', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 13px;
+}
+
+@font-face {
+  font-family: glue1-spoticon;
+  src: url(./fonts/spoticon_regular_2.woff2) format('woff2'),
+    url(./fonts/spoticon_regular_2.woff) format('woff'),
+    url(./fonts/spoticon_regular_2.ttf) format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: spotify-circular;
+  src: url(./fonts/CircularSpUIv3T-Light.woff2) format('woff2'),
+    url(./fonts/CircularSpUIv3T-Light.woff) format('woff'),
+    url(./fonts/CircularSpUIv3T-Light.ttf) format('ttf');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: spotify-circular;
+  src: url(./fonts/CircularSpUIv3T-Book.woff2) format('woff2'),
+    url(./fonts/CircularSpUIv3T-Book.woff) format('woff'),
+    url(./fonts/CircularSpUIv3T-Book.ttf) format('ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: spotify-circular;
+  src: url(./fonts/CircularSpUIv3T-Bold.woff2) format('woff2'),
+    url(./fonts/CircularSpUIv3T-Bold.woff) format('woff'),
+    url(./fonts/CircularSpUIv3T-Bold.ttf) format('ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }

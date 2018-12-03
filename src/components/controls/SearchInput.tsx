@@ -10,9 +10,9 @@ const StyledSearchInput = styled(Input)({
   color: '#fff',
   display: 'block',
   fontWeight: 600,
-  fontSize: '2.75em',
+  fontSize: '2.25em',
   lineHeight: '44px',
-  width: '100%'
+  width: '100%',
 });
 
 export const SearchInput = (props: ISearchInput) => (

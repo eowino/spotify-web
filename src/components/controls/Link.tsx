@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
 import { css as cssUtil } from '../../misc/';
+import { spotifyGreen } from '../../styles';
 
 interface ILink extends React.ButtonHTMLAttributes<HTMLAnchorElement> {
   href?: string;
@@ -44,9 +45,9 @@ const whiteLink = css({
 });
 
 const active = css({
-  color: '#1db954',
+  color: spotifyGreen,
   '&:hover, &:focus': {
-    color: '#1db954',
+    color: spotifyGreen,
   },
 });
 

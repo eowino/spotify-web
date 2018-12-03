@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+import './index.css';
+import './icons.css';
+import './fonts/CircularSpUIv3T-Bold.woff2';
+import './fonts/CircularSpUIv3T-Book.woff2';
+import './fonts/CircularSpUIv3T-Light.woff2';
+import './fonts/spoticon_regular_2.woff2';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
