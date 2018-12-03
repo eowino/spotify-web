@@ -14,6 +14,7 @@ const StyledNavBar = styled('nav')({
   height: '100vh',
   padding: '24px 24px 5px',
   width: '230px',
+  fontSize: 16,
   [activeInTablet]: {
     width: '80px',
     padding: '24px 0 0',

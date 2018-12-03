@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: #181818;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -9,7 +13,10 @@ body {
     'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS Gothic', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 13px;
+  font-size: 14px;
+  min-width: 720px;
+  letter-spacing: 0.015em;
+  line-height: 20px;
 }
 
 @font-face {

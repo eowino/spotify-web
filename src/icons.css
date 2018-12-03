@@ -15,3 +15,23 @@
 .spoticon-shuffle:before {
   content: '\F144';
 }
+
+.spoticon-skip-back:before {
+  content: '\F146';
+}
+
+.spoticon-play:before {
+  content: '\F132';
+}
+
+.spoticon-skip-next:before {
+  content: '\F148';
+}
+
+.spoticon-shuffle:before {
+  content: '\F13E';
+}
+
+.spoticon-volume:before {
+  content: '\F13E';
+}

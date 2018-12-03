@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Button } from './components/controls';
+import { Browse } from './modules';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        Spotify <Button>Click ME</Button>
+        <Browse />
       </div>
     );
   }
