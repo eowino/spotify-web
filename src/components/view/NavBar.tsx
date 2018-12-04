@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
-import { LogoWithText, Logo, Search, Home, Library } from '../view';
+import { LogoWithText, Logo, Search, Home, Library } from '.';
 import { Link, Button } from '../controls';
 import { mgb20, center } from '../../styles';
 import {
@@ -11,7 +11,7 @@ import {
   spotifyCalm,
 } from '../../styles';
 
-const StyledNavBar = styled('nav')({
+const StyledNavbar = styled('nav')({
   backgroundColor: '#0b0907',
   color: spotifyWhite,
   display: 'flex',
@@ -28,7 +28,7 @@ const StyledNavBar = styled('nav')({
   },
 });
 
-const StyledNavBarLink = styled('div')({
+const StyledNavbarLink = styled('div')({
   margin: '10px 0 20px',
   [activeInTablet]: {
     a: {
@@ -60,12 +60,12 @@ const Divider = styled('span')({
   verticalAlign: 'middle',
 });
 
-export class NavBar extends React.PureComponent {
+export class Navbar extends React.PureComponent {
   render() {
     return (
-      <StyledNavBar>
+      <StyledNavbar>
         <PrimaryNavArea>
-          <StyledNavBarLink>
+          <StyledNavbarLink>
             <Link href="#home" className="logo" whiteLink>
               <span className={hideInTablet}>
                 <LogoWithText />
@@ -74,25 +74,25 @@ export class NavBar extends React.PureComponent {
                 <Logo />
               </span>
             </Link>
-          </StyledNavBarLink>
-          <StyledNavBarLink>
+          </StyledNavbarLink>
+          <StyledNavbarLink>
             <Link href="#search" subtleLink withIcon>
               <Search />
               <span className={hideInTablet}>Search</span>
             </Link>
-          </StyledNavBarLink>
-          <StyledNavBarLink>
+          </StyledNavbarLink>
+          <StyledNavbarLink>
             <Link href="#home" subtleLink withIcon active>
               <Home />
               <span className={hideInTablet}>Home</span>
             </Link>
-          </StyledNavBarLink>
-          <StyledNavBarLink>
+          </StyledNavbarLink>
+          <StyledNavbarLink>
             <Link href="#library" subtleLink withIcon>
               <Library />
               <span className={hideInTablet}>Your Library</span>
             </Link>
-          </StyledNavBarLink>
+          </StyledNavbarLink>
         </PrimaryNavArea>
         <SecondaryNavArea className={hideInTablet}>
           <Button white rounded full className={mgb20}>
@@ -117,7 +117,7 @@ export class NavBar extends React.PureComponent {
             </Link>
           </div>
         </SecondaryNavArea>
-      </StyledNavBar>
+      </StyledNavbar>
     );
   }
 }

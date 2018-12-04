@@ -3,3 +3,6 @@ export * from './Input';
 export * from './SearchInput';
 export * from './Link';
 export * from './NowPlayingBar';
+export * from './PlayerControls';
+export * from './VolumeControls';
+export * from './ProgressBar';
