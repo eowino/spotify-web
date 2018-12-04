@@ -3,11 +3,17 @@ import styled from 'react-emotion';
 import { LogoWithText, Logo, Search, Home, Library } from '../view';
 import { Link, Button } from '../controls';
 import { mgb20, center } from '../../styles';
-import { hideInTablet, hideInDesktop, activeInTablet } from '../../styles';
+import {
+  hideInTablet,
+  hideInDesktop,
+  activeInTablet,
+  spotifyWhite,
+  spotifyCalm,
+} from '../../styles';
 
 const StyledNavBar = styled('nav')({
   backgroundColor: '#0b0907',
-  color: '#fff',
+  color: spotifyWhite,
   display: 'flex',
   flex: 1,
   flexDirection: 'column',
@@ -49,7 +55,7 @@ const Divider = styled('span')({
   display: 'inline-block',
   width: 1,
   height: 13,
-  borderLeft: '1px solid #b3b3b3',
+  borderLeft: `1px solid ${spotifyCalm}`,
   margin: '3px 15px',
   verticalAlign: 'middle',
 });

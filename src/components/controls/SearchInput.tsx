@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'react-emotion';
 import { Input, IInput } from './Input';
-import { spotifyGreen } from '../../styles';
+import { spotifyGreen, spotifyWhite } from '../../styles';
 
 interface ISearchInput extends IInput {}
 
 const StyledSearchInput = styled(Input)({
   backgroundColor: '#282828',
   border: 'none',
-  color: '#fff',
+  color: spotifyWhite,
   display: 'block',
   fontWeight: 600,
   fontSize: '2.25em',

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
 import { css as cssUtil } from '../../misc/';
-import { spotifyGreen } from '../../styles';
+import { spotifyGreen, spotifyCalm, spotifyWhite } from '../../styles';
 
 interface ILink extends React.ButtonHTMLAttributes<HTMLAnchorElement> {
   href?: string;
@@ -20,10 +20,10 @@ const StyledLink = styled('a')({
 });
 
 const subtleLink = css({
-  color: '#b3b3b3',
+  color: spotifyCalm,
   transitionDuration: '.2s',
   '&:hover, &:focus': {
-    color: '#fff',
+    color: spotifyWhite,
     textDecoration: 'none',
     borderBottomColor: 'currentcolor',
   },
@@ -31,18 +31,18 @@ const subtleLink = css({
 
 const smallLink = css({
   fontSize: '12px',
-  color: '#b3b3b3',
+  color: spotifyCalm,
   borderBottom: '1px solid rgba(0,0,0,0)',
   paddingBottom: 3,
   textTransform: 'none',
   '&:hover, &:focus': {
-    color: '#fff',
+    color: spotifyWhite,
     borderBottomColor: 'currentcolor',
   },
 });
 
 const whiteLink = css({
-  color: '#fff',
+  color: spotifyWhite,
 });
 
 const active = css({
