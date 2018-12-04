@@ -28,10 +28,10 @@
   content: '\F148';
 }
 
-.spoticon-shuffle:before {
+.spoticon-repeat:before {
   content: '\F13E';
 }
 
 .spoticon-volume:before {
-  content: '\F13E';
+  content: '\F15E';
 }

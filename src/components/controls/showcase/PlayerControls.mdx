@@ -5,6 +5,7 @@ menu: Components
 
 import { Playground, PropsTable } from 'docz';
 import { PlayerControls } from '../PlayerControls.tsx';
+import { Button } from '../Button.tsx';
 
 # Player Controls
 
@@ -15,5 +16,17 @@ import { PlayerControls } from '../PlayerControls.tsx';
 ## Basic usage
 
 <Playground>
-  <PlayerControls />
+  <PlayerControls
+    renderDemoMarkup={() => (
+      <>
+        <Button control>1</Button>
+        <Button control>2</Button>
+        <Button control circled>
+          3
+        </Button>
+        <Button control>4</Button>
+        <Button control>5</Button>
+      </>
+    )}
+  />
 </Playground>
