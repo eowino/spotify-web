@@ -1,1 +1,1 @@
-// Discover
+export function noop() {}

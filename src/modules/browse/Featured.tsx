@@ -1,1 +1,1 @@
-// Featured
+export function noop() {}
