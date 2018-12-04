@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "eg2.tslint",
+    "esbenp.prettier-vscode",
+    "paulmolluzzo.convert-css-in-js",
+    "silvenon.mdx",
+    "oderwat.indent-rainbow",
+    "naumovs.color-highlight"
+  ]
+}
