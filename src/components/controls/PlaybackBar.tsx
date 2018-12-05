@@ -6,6 +6,7 @@ import { spotifyCalm } from '../../styles';
 interface IPlaybackBar {
   currentTime: string;
   totalTime: string;
+  progressBarWidth: number;
 }
 
 const StyledPlaybackBar = styled('div')({
@@ -30,13 +31,14 @@ export class PlaybackBar extends React.PureComponent<IPlaybackBar> {
   static defaultProps: IPlaybackBar = {
     currentTime: '0:00',
     totalTime: '0:00',
+    progressBarWidth: 0,
   };
 
   render() {
     return (
       <StyledPlaybackBar>
         <StyledTime>{this.props.currentTime}</StyledTime>
-        <ProgressBar />
+        <ProgressBar cssWidth={this.props.progressBarWidth} />
         <StyledTime>{this.props.totalTime}</StyledTime>
       </StyledPlaybackBar>
     );
