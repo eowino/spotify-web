@@ -55,6 +55,10 @@ const StyledForeground = styled('div')({
 });
 
 export class ProgressBar extends React.PureComponent<IProgressBar> {
+  handleMouseMove = (e: any) => {
+    console.log(e.pageX, e.pageY);
+  };
+
   width = (isBall?: boolean) => {
     const cssWidth = this.props.cssWidth || 0;
     return isBall ? `${cssWidth - 1}%` : `${cssWidth}%`;
@@ -62,7 +66,7 @@ export class ProgressBar extends React.PureComponent<IProgressBar> {
 
   render() {
     return (
-      <StyledProgressBarWrapper>
+      <StyledProgressBarWrapper onMouseMove={this.handleMouseMove}>
         <StyledBackground className={sharedStyles}>
           <StyledForeground
             className={cssUtil('slider-fg', sharedStyles)}
