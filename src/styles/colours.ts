@@ -1,5 +1,6 @@
 export const spotifyGreen = '#1DB954';
 export const spotifyLightGreen = '#1ed760';
+export const spotifyRed = '#e22134';
 export const spotifyWhite = '#fff';
 export const spotifyBlack = '#191414';
 export const spotifyCalm = '#b3b3b3';
@@ -13,3 +14,5 @@ export const bgBlueGradient =
   'linear-gradient(rgb(47, 67, 106), rgb(5, 7, 11) 85%)';
 export const bgDarkBlueGradient =
   'linear-gradient(rgb(30, 50, 100), rgb(4, 6, 12) 85%)';
+export const bgBrownGradient =
+  'linear-gradient(rgb(103, 78, 50), rgb(10, 8, 5) 85%)';
