@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
+import { ProgressBar } from './ProgressBar';
 import {
   spotifyBlack,
   spotifyWhite,
@@ -49,7 +50,9 @@ export class NowPlayingBar extends React.PureComponent {
       <StyledNowPlayingBar>
         <StyledLeftArea>Left</StyledLeftArea>
         <StyledCenterArea>Center</StyledCenterArea>
-        <StyledRightArea>Right</StyledRightArea>
+        <StyledRightArea>
+          <ProgressBar cssWidth={50} />
+        </StyledRightArea>
       </StyledNowPlayingBar>
     );
   }
