@@ -4,6 +4,7 @@ export const spotifyWhite = '#fff';
 export const spotifyBlack = '#191414';
 export const spotifyCalm = '#b3b3b3';
 export const spotifyGrey = '#404040';
+export const spotifyMidGrey = '#282828';
 
 // Background image
 export const bgGreenGradient =

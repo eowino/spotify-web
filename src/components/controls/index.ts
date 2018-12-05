@@ -6,3 +6,4 @@ export * from './NowPlayingBar';
 export * from './PlayerControls';
 export * from './VolumeControls';
 export * from './ProgressBar';
+export * from './PlaybackBar';

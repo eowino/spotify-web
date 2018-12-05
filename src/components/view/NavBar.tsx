@@ -47,7 +47,7 @@ const PrimaryNavArea = styled('div')({
 });
 
 const SecondaryNavArea = styled('div')({
-  marginBottom: 30,
+  margin: '0px 0 110px',
   fontSize: 14,
 });
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProgressBar } from './ProgressBar';
-import styled, { css } from 'react-emotion';
+import styled from 'react-emotion';
 import { spotifyCalm } from '../../styles';
 
 interface IPlaybackBar {
@@ -13,6 +13,7 @@ const StyledPlaybackBar = styled('div')({
   display: 'flex',
   alignContent: 'center',
   position: 'relative',
+  width: '100%',
 });
 
 const StyledTime = styled('span')({
@@ -21,10 +22,6 @@ const StyledTime = styled('span')({
   minWidth: 40,
   textAlign: 'center',
   color: spotifyCalm,
-});
-
-const progressBar = css({
-  top: 6,
 });
 
 export class PlaybackBar extends React.PureComponent<IPlaybackBar> {

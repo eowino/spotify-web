@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'react-emotion';
-import { ProgressBar } from './ProgressBar';
+import { ProgressBar, PlaybackBar, PlayerControls } from './';
 import {
-  spotifyBlack,
+  spotifyMidGrey,
   spotifyWhite,
   spotifyCalm,
   focusPseudoClass,
@@ -10,13 +10,14 @@ import {
 
 const StyledNowPlayingBar = styled('div')({
   color: spotifyCalm,
-  backgroundColor: spotifyBlack,
+  backgroundColor: spotifyMidGrey,
   display: 'flex',
   alignItems: 'center',
   flexDirection: 'row',
   justifyContent: 'space-between',
   height: 90,
   padding: '0 16px',
+  minWidth: 620,
   button: {
     [focusPseudoClass]: {
       color: spotifyWhite,
@@ -44,14 +45,23 @@ const StyledRightArea = styled('div')({
   minWidth: 180,
 });
 
+const StyledInnerRightArea = styled('div')({
+  width: 180,
+});
+
 export class NowPlayingBar extends React.PureComponent {
   render() {
     return (
       <StyledNowPlayingBar>
         <StyledLeftArea>Left</StyledLeftArea>
-        <StyledCenterArea>Center</StyledCenterArea>
+        <StyledCenterArea>
+          <PlayerControls />
+          <PlaybackBar />
+        </StyledCenterArea>
         <StyledRightArea>
-          <ProgressBar cssWidth={50} />
+          <StyledInnerRightArea>
+            <ProgressBar cssWidth={50} />
+          </StyledInnerRightArea>
         </StyledRightArea>
       </StyledNowPlayingBar>
     );

@@ -85,6 +85,9 @@ const controlBtn = css({
 });
 
 const circled = css({
+  [focusPseudoClass]: {
+    transform: 'scale(1.06)',
+  },
   '&:after': {
     content: '""',
     position: 'absolute',
