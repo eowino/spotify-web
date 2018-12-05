@@ -29,6 +29,9 @@ const StyledAlert = styled('div')({
     right: 0,
     zIndex: 102,
   },
+  button: {
+    color: spotifyWhite,
+  },
 });
 
 export class Alert extends React.PureComponent<IAlert> {
@@ -42,7 +45,7 @@ export class Alert extends React.PureComponent<IAlert> {
         )}>
         {this.props.children}
         {this.props.close && (
-          <Button aria-label="Close">
+          <Button noDefault aria-label="Close">
             <span className="spoticon-close" />
           </Button>
         )}

@@ -20,6 +20,7 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   full?: boolean;
   control?: boolean;
   circled?: boolean;
+  noDefault?: boolean;
 }
 
 const roundedBtn = css({
@@ -100,6 +101,11 @@ const circled = css({
   },
 });
 
+const noDefault = css({
+  border: 0,
+  background: 'transparent',
+});
+
 export const Button = ({ className = '', ...props }: IButton) => (
   <StyledButton
     className={cssUtil(
@@ -109,7 +115,8 @@ export const Button = ({ className = '', ...props }: IButton) => (
       props.black ? blackBtn : '',
       props.full ? fullBtn : '',
       props.control ? controlBtn : '',
-      props.circled ? circled : ''
+      props.circled ? circled : '',
+      props.noDefault ? noDefault : ''
     )}
     {...props}
   />

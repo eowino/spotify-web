@@ -1,10 +1,13 @@
 import React from 'react';
 import { Navbar, StyledWrapper, StyledFooter } from '../components/view/';
-import { NowPlayingBar } from '../components/controls';
+import { NowPlayingBar, Alert } from '../components/controls';
 
 export function Browse() {
   return (
-    <StyledWrapper>
+    <StyledWrapper className="has-alert">
+      <Alert close fixedTop>
+        Success
+      </Alert>
       <Navbar />
       <StyledFooter>
         <NowPlayingBar />
