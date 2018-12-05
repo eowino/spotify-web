@@ -15,11 +15,19 @@ import { Alert } from '../Alert.tsx';
 ## Basic usage
 
 <Playground>
-  <Alert />
+  <Alert>Something positive here!</Alert>
 </Playground>
 
 ## Danger usage
 
 <Playground>
-  <Alert danger />
+  <Alert danger>Ooooops, something went wrong.</Alert>
+</Playground>
+
+## With close button
+
+<Playground close>
+  <Alert danger close>
+    Ooooops, something went wrong.
+  </Alert>
 </Playground>

@@ -35,3 +35,7 @@
 .spoticon-volume:before {
   content: '\F15E';
 }
+
+.spoticon-close:before {
+  content: '\F160';
+}

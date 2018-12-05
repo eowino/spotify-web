@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'react-emotion';
+import { Button } from '../controls';
 import { spotifyRed, spotifyWhite, spotifyGreen } from '../../styles';
 import { css as cssUtil } from '../../misc';
 
 interface IAlert {
   danger?: boolean;
+  close?: boolean;
   fixedTop?: boolean;
+  content?: string;
 }
 
 const StyledAlert = styled('div')({
@@ -15,6 +18,7 @@ const StyledAlert = styled('div')({
   height: 50,
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'space-between',
   '&.alert-danger': {
     backgroundColor: spotifyRed,
   },
@@ -36,7 +40,12 @@ export class Alert extends React.PureComponent<IAlert> {
           this.props.danger ? 'alert-danger' : '',
           this.props.fixedTop ? 'alert-fixed-top' : ''
         )}>
-        Content here
+        {this.props.children}
+        {this.props.close && (
+          <Button aria-label="Close">
+            <span className="spoticon-close" />
+          </Button>
+        )}
       </StyledAlert>
     );
   }
