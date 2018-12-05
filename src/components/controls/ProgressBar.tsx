@@ -21,6 +21,8 @@ const sharedStyles = css({
 
 const StyledBackground = styled('div')({
   backgroundColor: spotifyGrey,
+  position: 'absolute',
+  top: '50%',
   '&:hover': {
     '.slider-fg': {
       backgroundColor: spotifyGreen,
@@ -39,7 +41,7 @@ const StyledSliderBall = styled('span')({
   height: 14,
   width: 14,
   position: 'absolute',
-  bottom: 3,
+  top: -5,
   '&:hover': {
     cursor: 'pointer',
   },
