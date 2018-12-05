@@ -4,9 +4,9 @@ import { NowPlayingBar, Alert } from '../components/controls';
 
 export function Browse() {
   return (
-    <StyledWrapper className="has-alert">
+    <StyledWrapper>
       <Alert close fixedTop>
-        Success
+        Welcome to Spotify Web
       </Alert>
       <Navbar />
       <StyledFooter>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
-import { ProgressBar, PlaybackBar, PlayerControls } from './';
+import { VolumeControls, PlaybackBar, PlayerControls } from './';
 import {
   spotifyMidGrey,
   spotifyWhite,
@@ -53,14 +53,14 @@ export class NowPlayingBar extends React.PureComponent {
   render() {
     return (
       <StyledNowPlayingBar>
-        <StyledLeftArea>Left</StyledLeftArea>
+        <StyledLeftArea />
         <StyledCenterArea>
           <PlayerControls />
           <PlaybackBar />
         </StyledCenterArea>
         <StyledRightArea>
           <StyledInnerRightArea>
-            <ProgressBar cssWidth={50} />
+            <VolumeControls />
           </StyledInnerRightArea>
         </StyledRightArea>
       </StyledNowPlayingBar>

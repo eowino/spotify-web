@@ -8,3 +8,4 @@ export * from './VolumeControls';
 export * from './ProgressBar';
 export * from './PlaybackBar';
 export * from './Alert';
+export * from './VolumeControls';

@@ -36,6 +36,10 @@
   content: '\F15E';
 }
 
+.spoticon-volume-off:before {
+  content: '\F1EF';
+}
+
 .spoticon-close:before {
   content: '\F160';
 }
