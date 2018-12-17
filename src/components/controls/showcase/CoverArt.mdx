@@ -1,0 +1,34 @@
+---
+name: Cover Art
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { CoverArt } from '../CoverArt.tsx';
+
+# Cover Art
+
+## Properties
+
+<PropsTable of={CoverArt} />
+
+## Basic usage
+
+<Playground>
+  <CoverArt
+    href="#"
+    coverArtUrl="https://pl.scdn.co/images/pl/default/83fb41fda2c522378773b5f2f36f88084b4465e7">
+    Cover art
+  </CoverArt>
+</Playground>
+
+## With info
+
+<Playground>
+  <CoverArt
+    href="#"
+    info="The Pop List"
+    coverArtUrl="https://pl.scdn.co/images/pl/default/83fb41fda2c522378773b5f2f36f88084b4465e7">
+    Cover art
+  </CoverArt>
+</Playground>

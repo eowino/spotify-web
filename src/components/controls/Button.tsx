@@ -30,6 +30,7 @@ const roundedBtn = css({
   padding: '8px 22px',
   textTransform: 'uppercase',
   letterSpacing: '.16em',
+  lineHeight: 1.6,
   borderRadius: 500,
   fontSize: '.8em',
   [focusPseudoClass]: {
