@@ -35,7 +35,7 @@ export class PlaybackBar extends React.PureComponent<IPlaybackBar> {
     return (
       <StyledPlaybackBar>
         <StyledTime>{this.props.currentTime}</StyledTime>
-        <ProgressBar cssWidth={this.props.progressBarWidth} />
+        <ProgressBar width={this.props.progressBarWidth} />
         <StyledTime>{this.props.totalTime}</StyledTime>
       </StyledPlaybackBar>
     );

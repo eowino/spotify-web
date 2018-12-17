@@ -4,7 +4,12 @@ import { css as cssUtil } from '../../misc';
 import { spotifyCalm, spotifyGrey, spotifyGreen } from '../../styles';
 
 interface IProgressBar {
-  cssWidth?: number;
+  width?: number;
+}
+
+interface IProgressBarState {
+  width: number;
+  isDown: boolean;
 }
 
 const StyledProgressBarWrapper = styled('div')({
@@ -54,27 +59,86 @@ const StyledForeground = styled('div')({
   transitionProperty: 'background-color',
 });
 
-export class ProgressBar extends React.PureComponent<IProgressBar> {
-  handleMouseMove = (e: any) => {
-    console.log(e.pageX, e.pageY);
+export class ProgressBar extends React.PureComponent<
+  IProgressBar,
+  IProgressBarState
+> {
+  state = {
+    width: this.props.width || 0,
+    isDown: false,
   };
 
-  width = (isBall?: boolean) => {
-    const cssWidth = this.props.cssWidth || 0;
-    return isBall ? `${cssWidth - 1}%` : `${cssWidth}%`;
+  setWidthFromEvent = (e: any) => {
+    const { volumeUI } = this.getVolumeFromEvent(e);
+    this.setState(() => ({
+      width: this.filterWidthLimits(volumeUI),
+    }));
+  };
+
+  handleMouseMove = (e: any) => {
+    if (!this.state.isDown) return;
+    this.setWidthFromEvent(e);
+  };
+
+  handleClick = (e: any) => {
+    this.setWidthFromEvent(e);
+  };
+
+  handleMouseDown = (e: any) => {
+    this.setState(() => ({
+      isDown: true,
+    }));
+  };
+
+  getVolumeFromEvent = (e: any) => {
+    const mouseX = e.pageX - e.currentTarget.offsetLeft;
+    const elemWidth = e.currentTarget.offsetWidth;
+    const volume = mouseX / elemWidth;
+    const volumeUI = Math.floor(volume * 100) - 47;
+
+    return {
+      mouseX,
+      elemWidth,
+      volumeUI,
+    };
+  };
+
+  handleMouseLeave = (e: any) => {
+    this.setState(() => ({
+      isDown: false,
+    }));
+  };
+
+  filterWidthLimits = (width: number) => {
+    if (width >= 100) {
+      return 100;
+    } else if (width <= 0) {
+      return 0;
+    }
+    return width;
+  };
+
+  getWidth = (isBall?: boolean) => {
+    const { width } = this.state;
+    return isBall ? `${width - 1}%` : `${width}%`;
   };
 
   render() {
     return (
-      <StyledProgressBarWrapper onMouseMove={this.handleMouseMove}>
+      <StyledProgressBarWrapper
+        onMouseUp={this.handleMouseLeave}
+        onMouseLeave={this.handleMouseLeave}
+        onMouseMove={this.handleMouseMove}
+        onMouseDown={this.handleMouseDown}
+        onClick={this.handleClick}>
         <StyledBackground className={sharedStyles}>
           <StyledForeground
             className={cssUtil('slider-fg', sharedStyles)}
-            style={{ width: this.width() }}
+            style={{ width: this.getWidth() }}
           />
           <StyledSliderBall
             className="slider-ball"
-            style={{ left: this.width(true) }}
+            style={{ left: this.getWidth(true) }}
           />
         </StyledBackground>
       </StyledProgressBarWrapper>
