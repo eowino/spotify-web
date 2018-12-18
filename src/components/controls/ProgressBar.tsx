@@ -5,6 +5,7 @@ import { spotifyCalm, spotifyGrey, spotifyGreen } from '../../styles';
 
 interface IProgressBar {
   width?: number;
+  getWidthFromState?: (val: number) => void;
 }
 
 interface IProgressBarState {
@@ -68,12 +69,28 @@ export class ProgressBar extends React.PureComponent<
     isDown: false,
   };
 
+  componentDidMount = () => {
+    this.callGetWidthFromState();
+  };
+
   setWidthFromEvent = (e: any) => {
     const { volumeUI } = this.getVolumeFromEvent(e);
-    this.setState(() => ({
-      width: this.filterWidthLimits(volumeUI),
-    }));
+    this.setState(
+      () => ({
+        width: this.filterWidthLimits(volumeUI),
+      }),
+      () => {
+        this.callGetWidthFromState();
+      }
+    );
   };
+
+  callGetWidthFromState() {
+    const { getWidthFromState } = this.props;
+    if (getWidthFromState && getWidthFromState instanceof Function) {
+      getWidthFromState(this.state.width);
+    }
+  }
 
   handleMouseMove = (e: any) => {
     if (!this.state.isDown) return;
@@ -91,10 +108,11 @@ export class ProgressBar extends React.PureComponent<
   };
 
   getVolumeFromEvent = (e: any) => {
-    const mouseX = e.pageX - e.currentTarget.offsetLeft;
+    const mouseX =
+      e.pageX - (e.currentTarget as HTMLElement).getBoundingClientRect().left;
     const elemWidth = e.currentTarget.offsetWidth;
     const volume = mouseX / elemWidth;
-    const volumeUI = Math.floor(volume * 100) - 47;
+    const volumeUI = Math.ceil(volume * 100);
 
     return {
       mouseX,
@@ -125,13 +143,14 @@ export class ProgressBar extends React.PureComponent<
 
   render() {
     return (
-      <StyledProgressBarWrapper
-        onMouseUp={this.handleMouseLeave}
-        onMouseLeave={this.handleMouseLeave}
-        onMouseMove={this.handleMouseMove}
-        onMouseDown={this.handleMouseDown}
-        onClick={this.handleClick}>
-        <StyledBackground className={sharedStyles}>
+      <StyledProgressBarWrapper>
+        <StyledBackground
+          className={sharedStyles}
+          onMouseUp={this.handleMouseLeave}
+          onMouseLeave={this.handleMouseLeave}
+          onMouseMove={this.handleMouseMove}
+          onMouseDown={this.handleMouseDown}
+          onClick={this.handleClick}>
           <StyledForeground
             className={cssUtil('slider-fg', sharedStyles)}
             style={{ width: this.getWidth() }}

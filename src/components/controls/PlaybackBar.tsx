@@ -9,6 +9,10 @@ interface IPlaybackBar {
   progressBarWidth: number;
 }
 
+interface IPlaybackBarState {
+  progressValue: number;
+}
+
 const StyledPlaybackBar = styled('div')({
   display: 'flex',
   alignContent: 'center',
@@ -24,18 +28,34 @@ const StyledTime = styled('span')({
   color: spotifyCalm,
 });
 
-export class PlaybackBar extends React.PureComponent<IPlaybackBar> {
+export class PlaybackBar extends React.PureComponent<
+  IPlaybackBar,
+  IPlaybackBarState
+> {
   static defaultProps: IPlaybackBar = {
     currentTime: '0:00',
     totalTime: '0:00',
     progressBarWidth: 0,
   };
 
+  state = {
+    progressValue: 0,
+  };
+
+  getValue = (value: number) => {
+    this.setState(() => ({
+      progressValue: value,
+    }));
+  };
+
   render() {
     return (
       <StyledPlaybackBar>
         <StyledTime>{this.props.currentTime}</StyledTime>
-        <ProgressBar width={this.props.progressBarWidth} />
+        <ProgressBar
+          width={this.props.progressBarWidth}
+          getWidthFromState={this.getValue}
+        />
         <StyledTime>{this.props.totalTime}</StyledTime>
       </StyledPlaybackBar>
     );
