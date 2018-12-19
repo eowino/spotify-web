@@ -11,6 +11,7 @@ interface ILink extends React.ButtonHTMLAttributes<HTMLAnchorElement> {
   whiteLink?: boolean;
   withIcon?: boolean;
   active?: boolean;
+  subtleWithUnderline?: boolean;
   children: React.ReactChild | React.ReactChild[];
 }
 
@@ -62,6 +63,29 @@ const withIcon = css({
   },
 });
 
+const subtleWithUnderline = css({
+  fontSize: 14,
+  paddingBottom: 4,
+  position: 'relative',
+  letterSpacing: '.16em',
+  margin: 10,
+  padding: '5px 10px',
+  '&.active': {
+    color: spotifyWhite,
+    '&::before': {
+      content: '""',
+      height: 2,
+      backgroundColor: spotifyGreen,
+      width: 30,
+      position: 'absolute',
+      display: 'block',
+      left: '50%',
+      bottom: 0,
+      marginLeft: -15,
+    },
+  },
+});
+
 export const Link = ({ className = '', ...props }: ILink) => (
   <StyledLink
     {...props}
@@ -71,7 +95,8 @@ export const Link = ({ className = '', ...props }: ILink) => (
       props.smallLink ? smallLink : '',
       props.whiteLink ? whiteLink : '',
       props.withIcon ? withIcon : '',
-      props.active ? active : ''
+      props.active ? active : '',
+      props.subtleWithUnderline ? `${subtleLink} ${subtleWithUnderline}` : ''
     )}
   />
 );

@@ -33,11 +33,11 @@ const roundedBtn = css({
   lineHeight: 1.6,
   borderRadius: 500,
   fontSize: '.8em',
+  transition: 'all .3s cubic-bezier(.3,0,0,1)',
   [focusPseudoClass]: {
     backgroundColor: spotifyLightGreen,
     cursor: 'pointer',
     transform: 'scale(1.06)',
-    transition: 'all 33ms cubic-bezier(.3,0,0,1)',
     outline: 'none',
   },
   '&:disabled': {
